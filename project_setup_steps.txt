@@ -1,0 +1,41 @@
+Hello Sir,
+
+I have been stuck on a bug that occurs when I log in a second time using Postman. It shows the following error:
+{
+    "detail": "CSRF Failed: CSRF cookie not set."
+}
+I have checked all resources, including Stack Overflow and ChatGPT, but I am unable to resolve this issue.
+
+
+
+Steps to setup
+
+1. Set Up Python Environment
+   - Navigate to the project directory
+   - Create a virtual environment
+     python -m venv venv
+   - Activate the virtual environment
+     # On Windows
+     venv\Scripts\activate
+     # On macOS/Linux
+     source venv/bin/activate
+
+2. Install Required Packages
+   pip install -r requirements.txt
+
+3. Set Up Environment Variables
+   - Create a .env file in the project root
+   - Add the following content:
+     DATABASE_URL='postgresql://postgres:123@localhost:5432/spam'
+
+4. Run Migrations
+   python manage.py migrate
+
+5. Seed the Database
+   python seed.py
+
+6. Run the Development Server
+   python manage.py runserver
+
+7. Access the Application
+   http://localhost:8000
